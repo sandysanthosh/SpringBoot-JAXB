@@ -20,13 +20,12 @@ Java to xml binding
 #### Endpoint:
 
 
+    @Endpoint
+     public class StudentDetailsEndpoint {
 
-          @Endpoint
-          public class StudentDetailsEndpoint {
-
-            @PayloadRoot(namespace = "http://in28minutes.com/students", localPart = "GetStudentDetailsRequest")
-            @ResponsePayload
-            public GetStudentDetailsResponse processCourseDetailsRequest(@RequestPayload GetStudentDetailsRequest request) {
+      @PayloadRoot(namespace = "http://in28minutes.com/students", localPart = "GetStudentDetailsRequest")
+       @ResponsePayload
+        public GetStudentDetailsResponse processCourseDetailsRequest(@RequestPayload GetStudentDetailsRequest request) {
               GetStudentDetailsResponse response = new GetStudentDetailsResponse();
 
               StudentDetails studentDetails = new StudentDetails();
@@ -38,8 +37,8 @@ Java to xml binding
 
               return response;
             }
-
           }
+	  
           
 #### WebServiceConfig:
 
