@@ -5,6 +5,11 @@ Java to xml binding
 
 #### Maven plugin:
 
+	<dependency>
+	<groupId>wsdl4j</groupId>
+	<artifactId>wsdl4j</artifactId>
+	</dependency>
+
        <groupId>org.codehaus.mojo</groupId>
        <artifactId>jaxb2-maven-plugin</artifactId>
         <version>1.6</version>
