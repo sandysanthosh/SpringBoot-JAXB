@@ -19,27 +19,53 @@ jaxb
 
 ```
 @XmlRootElement(name = "employee")
-@XmlAccessorType(XmlAccessType.FIELD)
-public class EmployeeData implements Serializable {
- 
-  private static final long serialVersionUID = 1L;
- 
+public class Employee implements Serializable 
+{
+  @XmlElement(name=employeeId)
   private Integer id;
+ 
+  @XmlElement
   private String firstName;
+ 
   private String lastName;
+  private Department department;
 }
-
 ```
 
 #### Above converts to:
 
 ```
+<?xml version="1.0" encoding="UTF-8"?>
 <employee>
-    <id>1</id>
+  <employeeId>1</employeeId>
     <firstName>Lokesh</firstName>
-    <lastName>Gupta</lastName>
 </employee>
 
+```
+
+
+#### @XmlRootElement with ‘name’ attribute with JSON attribute:
+
+```
+@XmlRootElement(name = "employee")
+public class Employee implements Serializable 
+{
+  @XmlElement(name="id")
+  @JonProperty("id")
+  private Integer id;
+ 
+  @XmlElement(name="firstName")
+  @JonProperty("firstName")
+  private String firstName;
+  
+  @XmlElement(name="lastName")
+  @JonProperty("lastName")
+  private String lastName;
+  
+  @XmlElement(name="department")
+  @JonProperty("department")
+  private Department department;
+}
 ```
 
 
