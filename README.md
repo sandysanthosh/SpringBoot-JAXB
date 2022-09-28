@@ -3,6 +3,47 @@
 Java to xml binding
 
 
+jaxb
+
+```
+//Without name attribute
+@XmlRootElement             //1
+ 
+//With name attribute         
+@XmlRootElement(name = "employee")                //2
+
+```
+
+#### @XmlRootElement with ‘name’ attribute:
+
+
+```
+@XmlRootElement(name = "employee")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class EmployeeData implements Serializable {
+ 
+  private static final long serialVersionUID = 1L;
+ 
+  private Integer id;
+  private String firstName;
+  private String lastName;
+}
+
+```
+
+#### Above converts to:
+
+```
+<employee>
+    <id>1</id>
+    <firstName>Lokesh</firstName>
+    <lastName>Gupta</lastName>
+</employee>
+
+```
+
+
+
 #### Maven plugin:
 
 	<dependency>
